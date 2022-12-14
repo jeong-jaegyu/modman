@@ -1,18 +1,18 @@
-import requests
-import json
+from sys import argv
 
-route = "https://api.modrinth.com/v2/"
-search_query = "sodium"
-r = requests.get(f'{route}search?query={search_query}')
-a = json.loads(r.text)
-version = "1.16.5"
-for hit in a["hits"]:
-    print(hit["slug"])
-#    print(hit["versions"])
-    if version in hit["versions"]:
-        print("true\n")
-    else:
-        print("false\n")
+print(argv)
+# [0] path to the program
+# [1+] list of arguments separated by spaces
+# -> main.py 1 2
+# ['main.py', '1', '2']
 
-#with open("men","w") as f:
- #   f.write(a["hits"])
+
+# hello.py jayden
+#  -> hello Jayden
+print('My Name')
+
+
+
+# TODO: modman list
+# TODO: modman --minecraft-version=1.16.5 --latest install fabulously-optimized
+# TODO: modman get fabulously-optimized
